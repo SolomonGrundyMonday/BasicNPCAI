@@ -1,0 +1,12 @@
+In this OpenGL project, I plan to implement a basic "chasing" NPC AI for further iteration and if the project is successful, I
+may import it to a future project.  For now, the concept is to create a simple virtual environment in OpenGL
+2.0 with various obstacles and implement a simple MDP-based AI to chase the player around the map.  The idea is to expand my
+programming portfolio and add more options to my toolkit for future projects.  
+TO-DO list:
+-  Design virtual environment
+-  Break environment into discrete sections for MDP reward functions
+-  Implement player movement and update the current game state based on player movement.
+-  Implement AI to chase player while avoiding environmental objects.
+-  Iterate as needed.
+
+Everything in this README is subject to change, and will be updated periodically as the project is built.
