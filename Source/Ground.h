@@ -12,16 +12,7 @@ class Ground : public GameObject
    
    // Private member variables for textures, position, rotation and scaling.
    private:
-      unsigned char texture;
-      float posX;
-      float posY;
-      float posZ;
-      float scaleX;
-      float scaleY;
-      float scaleZ;
-      float rotX;
-      float rotY;
-      float rotZ;
+      unsigned int texture;
 
     public:
 
@@ -36,14 +27,9 @@ class Ground : public GameObject
       Ground(float x, float y, float z, float dx, float dy, float dz, float rx, float ry, float rz);
 
       /*
-       *   Function prototype for Initialize function implementation. 
+       *   Function prototype for Ground object Initialize function override. 
        */
       int Initialize(const char* filename);
-
-      /*
-       *   Function prototype for Reverse function.  
-       */
-      void Reverse(void* x, const int n);
 
       /*
        *   Function prototype for Render function implementation.
@@ -55,48 +41,4 @@ class Ground : public GameObject
        */
       void resolveCollision(Camera* camera);
 
-      /*
-       *   Function prototype for getPosX getter function.
-       */
-      float getPosX();
-
-      /*
-       *   Function prototype for getPosY getter function. 
-       */
-      float getPosY();
-
-      /*
-       *   Function prototype for getPosZ getter funciton.  
-       */
-      float getPosZ();
-
-      /*
-       *   Function prototype for getScaleX getter function.
-       */
-      float getScaleX();
-
-      /*
-       *   Function prototype for getScaleY getter function. 
-       */
-      float getScaleY();
-
-      /*
-       *   Function prototype for getScaleZ getter function. 
-       */
-      float getScaleZ();
-
-      /*
-       *   Function prototype for getRotX getter function. 
-       */
-      float getRotX();
-
-      /*
-       *   Function prototype for getRotY getter function. 
-       */
-      float getRotY();
-
-      /*
-       *   Function prototype for getRotZ getter function. 
-       */
-      float getRotZ();
 };

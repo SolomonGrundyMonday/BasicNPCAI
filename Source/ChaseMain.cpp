@@ -6,30 +6,38 @@
 #include "NPCAI.h"
 #include "Ground.h"
 #include "Player.h"
+#include "GameState.h"
 
 
 Camera* cam;
 Ground* map;
 Player* player;
+GameState* state;
 
 // Initialize game objects and load textures from files.
 void initialize()
 {
-   int mapInit;
+   int textureInit;
 
    map = new Ground(0.0, 0.0, 0.0, 5.0, 0.0, 10.0, 0.0, 0.0, 0.0);
-   mapInit = map->Initialize("../Assets/Concrete.bmp");
+   textureInit = map->Initialize("../Assets/Concrete.bmp");
 
-   if (mapInit != 0)
+   if (textureInit == 0)
    {
-      printf("Failed to load ground texture!\n");
+      printf("Failed to initialize ground texture!\n");
       exit(0);
    }
 
    cam = new Camera();
    
    player = new Player(-4.5, 0.1, -9.5, 0.5, 1.0, 0.5, 0.0, 0.0, 0.0);
-   player->Initialize("../Assets/Metal.bmp");
+   textureInit = player->Initialize("../Assets/Metal.bmp");
+
+   if (textureInit == 0)
+   {
+      printf("Failed to initialize ground texture!\n");
+      exit(0);
+   }
 }
 
 // Display function, called by GLUT to redraw the window.
