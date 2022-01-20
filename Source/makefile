@@ -26,9 +26,10 @@ endif
 
 # Dependencies
 ChaseMain.o: ChaseMain.cpp Ground.h Player.h GameObject.h Camera.h
-Ground.o: Ground.h GameObject.h NPCAI.h
+Ground.o: Ground.cpp Ground.h GameObject.h 
 Camera.o: Camera.cpp Camera.h
-Player.o: Player.cpp Player.h
+Player.o: Player.cpp Player.h GameObject.h
+GameObject.o: GameObject.cpp GameObject.h
 
 # Compile rules
 .c.o:
@@ -37,7 +38,7 @@ Player.o: Player.cpp Player.h
 	g++ -c $(CFLG) $<
 
 # Link
-chase:ChaseMain.o   Ground.o   Player.o   Camera.o
+chase: ChaseMain.o   GameObject.o   Ground.o   Player.o   Camera.o
 	g++ $(CFLG) -o $@ $^ $(LIBS)
 
 # Clean
